@@ -50,5 +50,101 @@ quasi consequatur doloribus dolorem commodi voluptatem facere fugit voluptatum s
       <mark>mark</mark>
     </div>
     <hr />
+
+    <h2>목록(list)</h2>
+    <h3>- 순서가 없는 목록(ul)</h3>
+
+    <ul>
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+    </ul>
+
+    <ol>
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+    </ol>
+
+    <h3>- 정의 목록(dl)</h3>
+
+    <dl>
+      <dt>정의 제목</dt>
+      <dd>정의 설명1</dd>
+      <dd>정의 설명2</dd>
+      <dt>정의 제목</dt>
+      <dd>정의 설명1</dd>
+      <dd>정의 설명2</dd>
+    </dl>
+
+    <h3>- 네비게이션 구조(정답)</h3>
+
+    <!-- depth1-->
+    <ul>
+      <li>
+        menu1
+        <!-- depth2 -->
+        <ul>
+          <li>
+            menu1-1
+            <!-- depth3 -->
+            <ul>
+              <li>menu1-1-1</li>
+              <li>menu1-1-2</li>
+              <li>menu1-1-3</li>
+            </ul>
+          </li>
+          <li>menu1-2</li>
+          <li>menu1-3</li>
+        </ul>
+      </li>
+      <li>
+        menu2
+        <!-- depth2 -->
+        <ul>
+          <li>menu2-1</li>
+          <li>menu2-2</li>
+          <li>menu2-3</li>
+        </ul>
+      </li>
+      <li>
+        menu3
+        <!-- depth2 -->
+        <ul>
+          <li>menu3-1</li>
+          <li>menu3-2</li>
+          <li>menu3-3</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>- 네비게이션 (링크 연결)</h3>
+
+    <ul>
+      <li>
+        <a href="#">menu1</a>
+        <ul>
+          <li><a href="#">menu1-1</a></li>
+          <li><a href="#">menu1-2</a></li>
+          <li><a href="#">menu1-3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu2</a>
+        <ul>
+          <li><a href="#">menu2-1</a></li>
+          <li><a href="#">menu2-2</a></li>
+          <li><a href="#">menu2-3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu3</a>
+        <ul>
+          <li><a href="#">menu3-1</a></li>
+          <li><a href="#">menu3-2</a></li>
+          <li><a href="#">menu3-3</a></li>
+        </ul>
+      </li>
+    </ul>
   </body>
 </html>
