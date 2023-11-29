@@ -4,6 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>css의 기초</title>
+    <link rel="stylesheet" href="./comm.css" />
+    <style>
+      p {
+        font-size: 20px;
+        color: plum;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>css의 기초</h1>
+
+    <strong style="font-size: 30px; font-weight: normal"
+      >Lorem ipsum dolor sit amet.</strong
+    >
+    <p class="desc1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
+      dolorem!
+    </p>
+    <p class="desc2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam obcaecati,
+      dolorem ut numquam quia nisi facere modi doloribus voluptate nobis.
+    </p>
+
+    <div id="main">
+      <div class="header dark">
+        <nav id="gnb">
+          <ul class="depth1">
+            <li>
+              <a href="#">menu1</a>
+              <ul class="depth2">
+                <li><a href="#">menu1-1</a></li>
+                <li><a href="#">menu1-2</a></li>
+                <li><a href="#">menu1-3</a></li>
+                <li><a href="#">menu1-4</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">menu2</a>
+            </li>
+            <li>
+              <a href="#">menu3</a>
+            </li>
+            <li>
+              <a href="#">menu4</a>
+            </li>
+          </ul>
+        </nav>
+        <input type="search" title="검색" class="input" />
+      </div>
+
+      <div class="main">
+        <section class="bbs">
+          <ul>
+            <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>

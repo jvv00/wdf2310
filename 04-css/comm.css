@@ -1,0 +1,93 @@
+* {
+  color: sandybrown;
+}
+
+em {
+  font-size: 28px;
+  color: #dcbdb8;
+  font-weight: bold;
+}
+
+.desc2 {
+  font-size: 20px;
+  color: aquamarine;
+  font-weight: bold;
+}
+
+.desc1 {
+  color: darkkhaki;
+}
+
+p.desc1 {
+  color: lightblue;
+}
+
+#main {
+  width: 500px;
+  height: 700px;
+  background-color: pink;
+}
+
+.header {
+  background-color: #ebebeb;
+}
+
+.header.dark {
+  background-color: #333;
+}
+
+.header .depth1 {
+  background-color: blue;
+}
+
+.header .depth1 li {
+  background-color: yellow;
+}
+
+#gnb .depth1 a {
+  color: darkseagreen;
+}
+
+.header .depth1 a {
+  color: red;
+}
+
+#gnb .depth1 > li {
+  background-color: orange;
+}
+
+#gnb .depth1 > li > a {
+  color: blue;
+}
+
+#gnb .depth2 a {
+  color: green;
+}
+
+#gnb .depth2 a:hover {
+  color: fuchsia;
+  background-color: black;
+}
+
+.input {
+  width: 500px;
+  height: 20px;
+  background-color: rgb(237, 255, 242);
+}
+
+.input:focus {
+  background-color: rgb(255, 230, 235);
+  color: #111;
+}
+
+.bbs li a {
+  color: rgb(94, 104, 186);
+}
+
+.bbs li:first-child {
+  background-color: yellowgreen;
+}
+
+.bbs li:first-child a {
+  color: red;
+}
