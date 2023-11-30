@@ -1,5 +1,5 @@
 * {
-  color: sandybrown;
+  color: darkslateblue;
 }
 
 em {
@@ -90,4 +90,80 @@ p.desc1 {
 
 .bbs li:first-child a {
   color: red;
+}
+
+.bbs li:last-child {
+  background-color: yellow;
+}
+
+.bbs li-child a {
+  color: blue;
+}
+
+.bbs li:nth-child(2) {
+  background: #333;
+}
+
+.bbs li:nth-child(2) a {
+  color: #fff;
+}
+
+.goto li::before {
+  content: ">";
+}
+
+.goto li::after {
+  content: "<";
+}
+
+.goto a {
+  color: #111 !important;
+}
+.goto a::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: url(./images/mobile_212852414260.png) 0 0 no-repeat;
+  background-size: 100%;
+}
+
+.goto a::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: url(./images/mobile_212852414260.png) 0 0 no-repeat;
+  background-size: 100%;
+}
+
+.icon li:first-child::before {
+  content: "\f015";
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+}
+
+.icon li:nth-child(2)::before {
+  content: "\f002";
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+}
+
+.icon li:nth-child(3)::before {
+  content: "\f09b";
+  font-family: "Line Awesome Brands";
+}
+
+.icon li:nth-child(4)::before {
+  content: "\f16d";
+  font-family: "Line Awesome Brands";
+}
+
+.icon li:last-child::before {
+  content: "\f167";
+  font-family: "Line Awesome Brands";
+}
+
+.icon li:first-child a::after {
+  content: "^^";
 }
