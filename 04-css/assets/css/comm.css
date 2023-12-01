@@ -1,3 +1,5 @@
+@import url(reset.css);
+
 * {
   color: darkslateblue;
 }
@@ -166,4 +168,15 @@ p.desc1 {
 
 .icon li:first-child a::after {
   content: "^^";
+}
+
+/* font */
+
+.font-size1 {
+  font-size: 20px;
+}
+
+.font-size2 {
+  font-size: 1em;
+  /* 부모 기준 */
 }
