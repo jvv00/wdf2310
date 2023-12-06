@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display</title>
+  </head>
+  <body>
+    <h1>Display</h1>
+
+    <h2>Block(기본값) &amp; none</h2>
+    <!-- w, h 값 가능 -->
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <div class="block none">block</div>
+    <!-- display: none 스크린리더기가 읽지 않아 -->
+    <style>
+      .none {
+        display: none;
+      }
+      .block {
+        padding: 12px 14px;
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        background: rgb(119, 168, 241);
+        border: 1px solid #000;
+        font-style: #fff;
+        text-align: center;
+        box-sizing: border-box;
+      }
+    </style>
+
+    <h2>Inline(일반 글씨)</h2>
+    <div class="inline">inline</div>
+    <div class="inline">inline</div>
+
+    <style>
+      .inline {
+        display: inline;
+        width: 150px;
+        height: 50px;
+        border-radius: 5px;
+        background: rgb(241, 119, 210);
+        border: 1px solid #000;
+      }
+
+      .inline::after {
+        display: block;
+        content: "";
+        width: 100px;
+        height: 100px;
+        background: rgb(218, 193, 211);
+      }
+    </style>
+
+    <h2>Inline-Block(가로,세로 값 가능, 글자처럼 옆으로 배치)</h2>
+    <div class="box1">그림</div>
+    바로가기
+
+    <style>
+      .box1 {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: #ff0000;
+        vertical-align: middle;
+      }
+    </style>
+
+    <h2>**flex**(layout)</h2>
+  </body>
+</html>
