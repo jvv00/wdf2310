@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Float</title>
+  </head>
+  <body>
+    <h1>float</h1>
+    <div class="box1">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+    </div>
+    <div class="box2">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur,
+      pariatur?
+    </div>
+    <style>
+      .box1 .item {
+        float: left;
+        height: 100px;
+        width: 100px;
+        background: lightcyan;
+      }
+      .box2 {
+        clear: both;
+        border: 1px solid #000;
+      }
+    </style>
+
+    <h2>float layout</h2>
+    <div class="wrap">
+      <header id="header">
+        <h1 id="logo">logo</h1>
+        <nav id="gnb">
+          <ul class="depth1">
+            <li>
+              Menu1
+              <ul class="depth2">
+                <li>SubMenu1</li>
+                <li>SubMenu2</li>
+                <li>SubMenu3</li>
+                <li>SubMenu4</li>
+              </ul>
+            </li>
+            <li>
+              Menu2
+              <ul class="depth2">
+                <li>SubMenu1</li>
+                <li>SubMenu2</li>
+                <li>SubMenu3</li>
+                <li>SubMenu4</li>
+              </ul>
+            </li>
+            <li>
+              Menu3
+              <ul class="depth2">
+                <li>SubMenu1</li>
+                <li>SubMenu2</li>
+                <li>SubMenu3</li>
+                <li>SubMenu4</li>
+              </ul>
+            </li>
+            <li>
+              Menu4
+              <ul class="depth2">
+                <li>SubMenu1</li>
+                <li>SubMenu2</li>
+                <li>SubMenu3</li>
+                <li>SubMenu4</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="slide">
+        <ul>
+          <li>slide1</li>
+          <li>slide2</li>
+          <li>slide3</li>
+        </ul>
+      </div>
+      <main id="main">
+        <section class="sec-g">공지사항</section>
+        <section class="sec-g">배너</section>
+        <section class="sec-g">바로가기</section>
+      </main>
+      <footer id="footer">
+        <div class="ft-logo">logo</div>
+        <div class="copyright">copyright</div>
+        <div class="sns">sns</div>
+      </footer>
+    </div>
+    /.wrap
+
+    <style>
+      .wrap {
+        width: 1280px;
+        height: 100%;
+        margin: 0 auto;
+        background: #e0e0e0;
+      }
+      #header {
+        /* 1. 부모에게 높이값 지정 */
+        height: 100px;
+        background: #fffccd;
+      }
+      #logo {
+        float: left;
+        /* width: 100px;
+        height: 100px; */
+        background: #d0b4f0;
+      }
+      #gnb {
+        float: right;
+        background: #ddf4ff;
+      }
+      #gnb li {
+        float: left;
+      }
+      .depth2 {
+        display: none;
+      }
+      .slide ul {
+        /* 2.overflow : auto;  */
+        overflow: auto;
+      }
+      .slide li {
+        float: left;
+        background: #ffd8f2;
+      }
+      #main::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .sec-g {
+        float: left;
+        width: 30%;
+        height: 200px;
+        background: #daffdc;
+        border: 1px solid #000;
+        box-sizing: border-box;
+      }
+      .sec-g + .sec-g {
+        margin-left: 5%;
+      }
+
+      #footer {
+        height: 100px;
+        background: #f0e9ff;
+        box-sizing: border-box;
+      }
+
+      .ft-logo {
+        float: left;
+      }
+      .copyright {
+        text-align: center;
+      }
+      .sns {
+        float: right;
+        margin-top: -21px;
+      }
+    </style>
+  </body>
+</html>
