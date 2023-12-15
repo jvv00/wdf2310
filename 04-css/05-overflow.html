@@ -8,32 +8,50 @@
   <body>
     <h1>OverFlow</h1>
     <div class="box1">
-      <div class="item1">1</div>
-      <div class="item2">2</div>
-      <div class="item3">3</div>
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
     </div>
 
     <style>
       .box1 {
         display: flex;
-        /* flex-direction: row; */
-        /* flex-wrap: wrap; */
         width: 100px;
-        height: 20px;
+        border: 5px solid red;
+        overflow-x: auto;
       }
-      .box1 .item1 {
-        width: 80px;
-        position: absolute;
-        background: #dadada;
+      .item {
+        flex-shrink: 0;
+        width: 100%;
+        background: #ffe7f7;
       }
-      .box1 .item2 {
-        width: 100px;
+    </style>
 
-        background: #ffabab;
-        overflow: hidden;
-      }
-      .box1 .item3 {
-        width: 100px;
+    <h2>이용약관</h2>
+
+    <div class="container">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque culpa, aut
+      voluptates ipsum nemo voluptatibus facilis sequi eveniet itaque laboriosam
+      provident voluptate modi necessitatibus ex, tenetur saepe numquam maiores
+      dolore maxime ad reiciendis aperiam natus. Reprehenderit fugiat
+      dignissimos delectus cupiditate consectetur. Quidem quibusdam, laborum
+      assumenda quod cupiditate natus quisquam sunt mollitia perspiciatis
+      perferendis? Unde nobis delectus reprehenderit ducimus ipsam voluptatum
+      quo repudiandae aliquid culpa facere corrupti vitae dolor alias, eaque ea
+      temporibus nam veritatis assumenda qui voluptates eveniet fuga, vero
+      veniam dicta. Neque repellat voluptas, placeat aut hic temporibus
+      veritatis consequuntur iure sit optio vitae harum quos sequi doloribus
+      reiciendis!
+    </div>
+
+    <style>
+      .container {
+        border: 5px solid #ff6600;
+        max-width: 500px;
+        min-width: 10px;
+        margin: 0 auto;
+        height: 100px;
+        overflow: auto;
       }
     </style>
   </body>
