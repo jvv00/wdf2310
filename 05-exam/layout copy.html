@@ -11,7 +11,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="./js/comm.js"></script>
-
+    <i class="las la-times"></i>
     <link rel="stylesheet" href="./CSS/comm.css" />
   </head>
   <body>
@@ -79,35 +79,19 @@
               <img src="./images/slide3.jpg" alt="이미지 설명" />
             </a>
           </div>
-          <div class="swiper-slide">
-            <a href="#">
-              <img src="./images/slide3.jpg" alt="이미지 설명" />
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#">
-              <img src="./images/slide3.jpg" alt="이미지 설명" />
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#">
-              <img src="./images/slide3.jpg" alt="이미지 설명" />
-            </a>
-          </div>
-          ...
+
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
         </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
-      </div>
-      Swiper CSS Styles/Size
-      <!-- <div class="slide">
+        Swiper CSS Styles/Size
+        <!-- <div class="slide">
         <ul>
           <li>
             <a href="#">
@@ -126,6 +110,7 @@
           </li>
         </ul>
       </div> -->
+      </div>
       <main id="main">
         <!-- 공지사항 섹션 -->
         <section class="sec-g sec-bbs">
@@ -186,6 +171,19 @@
           <a href="#">유튜브</a>
         </div>
       </footer>
+    </div>
+    <div class="dimmed">
+      <div class="modal">
+        <header class="modal-hd">모달 제목</header>
+        <main class="modal-bd">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, fugiat
+          dolor distinctio error ea earum voluptates quam amet voluptatum quos?
+        </main>
+        <button class="btn-close">
+          <span class="blind">모달창 닫기</span>
+          <!-- <i class="las la-times"></i> -->
+        </button>
+      </div>
     </div>
   </body>
 </html>
