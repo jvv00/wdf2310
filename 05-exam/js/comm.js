@@ -3,11 +3,11 @@ const swiper = new Swiper(".swiper", {
   // direction: "vertical",
   loop: true,
   slidesPerView: 1,
-  // spaceBetween: 30,
-  // autoplay: {
-  //   delay: 2500,
-  //   disableOnInteraction: false,
-  // },
+  spaceBetween: 30,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
 
   // If we need pagination
   pagination: {
@@ -21,7 +21,7 @@ const swiper = new Swiper(".swiper", {
   },
 
   // And if we need scrollbar
-  // scrollbar: {
-  //   el: ".swiper-scrollbar",
-  // },
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
 });
