@@ -79,20 +79,24 @@
 #gnb .depth1 :hover {
   background: rgb(202, 202, 235);
 }
-
-/*#gnb .depth1 :hover .depth2 {
+/* 마우스 오버 시 전체 메뉴 */
+/* #gnb .depth1:hover .depth2 {
   display: block;
   background: #c4e0cd;
- }전체 메뉴 보이게 안됨! 질문*/
+} */
+/* 마우스 오버 시 개별 메뉴 */
 #gnb .depth1 li:hover .depth2 {
-  display: block;
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+  max-height: 19rem;
+  padding: 20px 0;
   background: #c4e0cd;
 }
 
 #gnb .depth1 > li > a {
   display: flex;
   height: 6.25rem;
-  border-right: 0.0625rem solid #e7e7e7;
   align-items: center;
   justify-content: center;
   background: var(--white);
@@ -100,14 +104,18 @@
 }
 
 #gnb .depth2 {
-  display: none;
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
   background: rgb(196, 196, 230);
   position: absolute;
   top: 6.25rem;
   /* right: 0; */
   width: 100%;
   z-index: 1000;
-  padding: 0.625rem 0;
 }
 
 #gnb .depth2 li {
