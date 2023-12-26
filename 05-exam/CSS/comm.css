@@ -38,7 +38,7 @@
   /* flex-direction: column; */
   /* 최대 1200px까지 */
   max-width: var(--widthWrap);
-  height: 200vh;
+  height: 100%;
   margin: auto;
   background: var(--white);
   justify-content: center;
@@ -110,7 +110,6 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s;
-  background: rgb(196, 196, 230);
   position: absolute;
   top: 6.25rem;
   /* right: 0; */
@@ -124,6 +123,9 @@
 .depth2 a {
   display: block;
   padding: 0.1875rem 0;
+}
+.depth2 a:hover {
+  color: #ffd4d4;
 }
 /* tab/et */
 @media screen and (max-width: 61.25rem) {
@@ -163,11 +165,38 @@
   position: relative;
   height: 18.75rem;
 }
+
 .slide ul {
   display: flex;
   position: absolute;
   top: 0;
   left: 0;
+  animation-name: ani-slide;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+@keyframes ani-slide {
+  0% {
+    left: 0;
+  }
+  30% {
+    left: 0;
+  }
+  33.333% {
+    left: -100%;
+  }
+  63% {
+    left: -100%;
+  }
+  66.666% {
+    left: -200%;
+  }
+  96% {
+    left: -200%;
+  }
+  100% {
+    left: 0;
+  }
 }
 
 .slide a {
@@ -184,7 +213,7 @@
   display: flex;
   justify-content: space-between;
   gap: 1.25rem;
-  height: var(--minHeight);
+  /* height: var(--minHeight); */
 }
 
 .sec-g {
