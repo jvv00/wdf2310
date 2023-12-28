@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>js입문</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script defer src="./js/comm.js"></script>
   </head>
   <body>
@@ -19,5 +21,34 @@
     <div class="tab">tab3</div>
     <div class="tab">tab4</div>
     <script></script>
+
+    <ul class="flip">
+      <li class="depth1">
+        Click to slide the panel down or up
+        <ul class="depth2">
+          <li class="panel">Hello world!</li>
+          <li class="panel">Hello world!</li>
+          <li class="panel">Hello world!</li>
+          <li class="panel">Hello world!</li>
+        </ul>
+      </li>
+    </ul>
+
+    <style>
+      .panel,
+      .flip,
+      .depth1,
+      .depth2 {
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        border: solid 1px #c3c3c3;
+      }
+      .panel,
+      .depth2 {
+        padding: 50px;
+        display: none;
+      }
+    </style>
   </body>
 </html>

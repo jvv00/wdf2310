@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ratio</title>
+  </head>
+  <body>
+    <h1>Ratio</h1>
+    <h1>1:1 ratio</h1>
+    <div class="square"></div>
+
+    <hr />
+
+    <h1>responsive youtube player</h1>
+
+    <div class="youtube-wrap">
+      <iframe
+        class="player"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/D1PvIWdJ8xo"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <style>
+      /* 1:1 ratio */
+      .square {
+        width: 200px;
+        background: blue;
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 0;
+          /* 비율 유지 하려면 padding값 */
+          padding-top: 100%;
+        }
+      }
+
+      /* responsive youtube player */
+      .youtube-wrap {
+        position: relative;
+        width: 100%;
+        /* 16 : 9 = 100% : 56.25% */
+        padding-bottom: 56.25%;
+        .player {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: #000;
+        }
+      }
+    </style>
+  </body>
+</html>

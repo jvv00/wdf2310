@@ -168,3 +168,9 @@ tabEls.forEach(function (tabEl, index) {
   console.log(tabEl, index);
   tabEl.classList.add(`tab${index + 1}`);
 });
+
+$(document).ready(function () {
+  $(".depth1").click(function () {
+    $(".depth2").slideToggle("slow");
+  });
+});
