@@ -241,6 +241,9 @@
 .tabs .active .tab-cont {
   display: inline-flex;
 }
+.list-bbs {
+  flex-direction: column;
+}
 .sec-bbs .list-bbs li {
   display: flex;
   align-items: center;
