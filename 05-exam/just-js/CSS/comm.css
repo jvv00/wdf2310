@@ -79,37 +79,16 @@
 #gnb .depth1 :hover {
   background: rgb(202, 202, 235);
 }
-/* 마우스 오버 시 전체 메뉴 */
-/* #gnb .depth1:hover .depth2 {
-  display: block;
-  background: #c4e0cd;
-} */
-/* 마우스 오버 시 개별 메뉴 */
-#gnb .depth1 li:hover .depth2 {
-  /* display: block; */
-  opacity: 1;
-  visibility: visible;
-  max-height: 19rem;
-  padding: 20px 0;
-  background: #c4e0cd;
-}
-
-#gnb .depth1 > li > a {
-  display: flex;
-  height: 6.25rem;
-  align-items: center;
-  justify-content: center;
-  background: var(--white);
-  padding: 0 3.125rem;
-}
 
 #gnb .depth2 {
+  display: none;
   overflow: hidden;
-  max-height: 0;
+
+  /* max-height: 0; */
   padding: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s;
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  /* transition: all 0.4s; */
   position: absolute;
   top: 6.25rem;
   /* right: 0; */
@@ -211,28 +190,57 @@
 
 #main {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 1.25rem;
   /* height: var(--minHeight); */
 }
 
-.sec-g {
-  /* width: 100%; */
-  /* width: 33.3333%; */
+.tabs,
+.sec-g .sec-bnr,
+.sec-g .sec-goto {
   flex-grow: 1;
-  /* 1 : true (참), 0 : false (거짓) */
   flex-basis: 0;
   padding: 0.625rem 0;
-
-  /* background-color: rgb(250, 248, 215); */
 }
+.tabs {
+  position: relative;
+  display: flex;
 
+  /* justify-content: space-between; */
+}
+.tabs .sec-g {
+  width: 50%;
+}
+.tabs .sec-tit {
+  padding: 3px 0;
+  text-align: center;
+  background: #f1f1f1;
+  color: #474747;
+}
 .sec-tit {
   padding-bottom: 0.4375rem;
 }
-
-/* bbs */
-
+/* 비활성화 됐을 떄 */
+.tabs .tab-cont {
+  display: none;
+}
+/* 활성화 */
+.tabs .active .sec-tit {
+  display: block;
+  background: #feffc9;
+  color: green;
+}
+.tabs .tab-cont {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 20px;
+}
+.tabs .active .tab-cont {
+  display: inline-flex;
+}
 .sec-bbs .list-bbs li {
   display: flex;
   align-items: center;
@@ -251,11 +259,22 @@
   display: block;
   padding: 0.125rem 0;
 }
+
+.list-gallery {
+  display: flex;
+  justify-content: space-between;
+}
+
 .sec-bnr {
   display: flex;
   align-items: center;
   justify-content: center;
+  object-fit: contain;
 }
+.sec-bnr img {
+  width: 100%;
+}
+
 .sec-bnr .sec-tit,
 .sec-goto .sec-tit {
   margin-bottom: 0;
@@ -267,6 +286,7 @@
 .sec-goto {
   display: flex;
   justify-content: center;
+  padding: 0.625rem 0;
 }
 .sec-goto .list-goto {
   display: flex;
@@ -408,6 +428,7 @@
   color: var(--white);
   background: var(--black);
   margin-bottom: 1.25rem;
+  cursor: pointer;
 }
 .modal i {
   color: var(--white);

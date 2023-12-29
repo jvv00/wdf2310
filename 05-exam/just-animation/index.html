@@ -8,9 +8,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script defer src="./js/comm.js"></script>
+    <script src="./js/comm.js"></script>
     <i class="las la-times"></i>
     <link rel="stylesheet" href="./CSS/comm.css" />
   </head>
@@ -83,27 +87,49 @@
       </div>
     </div>
     <main id="main">
-      <!-- 공지사항 섹션 -->
-      <section class="sec-g sec-bbs">
-        <h2 class="sec-tit">공지사항</h2>
-        <ul class="list-bbs">
-          <li>
-            <a href="#">Lorem ipsum dolor sit amet.</a>
-          </li>
-          <li>
-            <a href="#">Lorem ipsum dolor sit amet.</a>
-          </li>
-          <li>
-            <a href="#">Lorem ipsum dolor sit amet.</a>
-          </li>
-          <li>
-            <a href="#">Lorem ipsum dolor sit amet.</a>
-          </li>
-          <li>
-            <a href="#">Lorem ipsum dolor sit amet.</a>
-          </li>
-        </ul>
-      </section>
+      <div id="tabs" class="tabs">
+        <!-- 공지사항 섹션 -->
+        <section class="sec-g sec-bbs active">
+          <h2 class="sec-tit">공지사항</h2>
+          <ul class="tab-cont list-bbs">
+            <li>
+              <a href="#">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li>
+              <a href="#">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li>
+              <a href="#">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li>
+              <a href="#">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li>
+              <a href="#">Lorem ipsum dolor sit amet.</a>
+            </li>
+          </ul>
+        </section>
+        <section class="sec-g sec-gallery">
+          <h2 class="sec-tit">갤러리</h2>
+          <ul class="tab-cont list-gallery">
+            <li>
+              <a href="#">
+                <img src="./images/thumb-gallery.jpg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/thumb-gallery.jpg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/thumb-gallery.jpg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
       <!-- 배너 섹션 -->
       <section class="sec-g sec-bnr">
         <h2 class="sec-tit">배너</h2>
@@ -143,7 +169,7 @@
       </div>
     </footer>
 
-    <div class="dimmed">
+    <div id="modal" class="dimmed">
       <div class="modal">
         <header class="modal-hd">모달 제목</header>
         <main class="modal-bd">
