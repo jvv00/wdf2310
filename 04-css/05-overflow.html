@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overflow</title>
+  </head>
+  <body>
+    <h1>OverFlow</h1>
+    <div class="box1">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+
+    <style>
+      .box1 {
+        display: flex;
+        width: 100px;
+        border: 5px solid red;
+        overflow-x: auto;
+      }
+      .item {
+        flex-shrink: 0;
+        width: 100%;
+        background: #ffe7f7;
+      }
+    </style>
+
+    <h2>이용약관</h2>
+
+    <div class="container">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque culpa, aut
+      voluptates ipsum nemo voluptatibus facilis sequi eveniet itaque laboriosam
+      provident voluptate modi necessitatibus ex, tenetur saepe numquam maiores
+      dolore maxime ad reiciendis aperiam natus. Reprehenderit fugiat
+      dignissimos delectus cupiditate consectetur. Quidem quibusdam, laborum
+      assumenda quod cupiditate natus quisquam sunt mollitia perspiciatis
+      perferendis? Unde nobis delectus reprehenderit ducimus ipsam voluptatum
+      quo repudiandae aliquid culpa facere corrupti vitae dolor alias, eaque ea
+      temporibus nam veritatis assumenda qui voluptates eveniet fuga, vero
+      veniam dicta. Neque repellat voluptas, placeat aut hic temporibus
+      veritatis consequuntur iure sit optio vitae harum quos sequi doloribus
+      reiciendis!
+    </div>
+
+    <style>
+      .container {
+        border: 5px solid #ff6600;
+        max-width: 500px;
+        min-width: 10px;
+        margin: 0 auto;
+        height: 100px;
+        overflow: auto;
+      }
+    </style>
+  </body>
+</html>
