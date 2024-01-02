@@ -76,9 +76,9 @@
 #gnb .depth1 li {
   position: relative;
 }
-#gnb .depth1 :hover {
+/* #gnb .depth1 :hover {
   background: rgb(202, 202, 235);
-}
+} */
 
 #gnb .depth2 {
   display: none;
@@ -103,9 +103,9 @@
   display: block;
   padding: 0.1875rem 0;
 }
-.depth2 a:hover {
+/* .depth2 a:hover {
   color: #ffd4d4;
-}
+} */
 /* tab/et */
 @media screen and (max-width: 61.25rem) {
   #header {
@@ -150,11 +150,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  animation-name: ani-slide;
+  transition: 0.3s ease-in-out;
+  /* animation-name: ani-slide;
   animation-duration: 10s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
 }
-@keyframes ani-slide {
+/* @keyframes ani-slide {
   0% {
     left: 0;
   }
@@ -176,7 +177,7 @@
   100% {
     left: 0;
   }
-}
+} */
 
 .slide a {
   /* display: block; 질문*/
