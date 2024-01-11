@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <header id="header">header</header>
+    <div class="area1"></div>
+<div class="area2">
+	<div class="circle-g circle1">
+	  box1
+  </div>
+	<div class="circle-g circle2">
+    box2
+	</div>
+</div>
+<div class="area3"></div>
+<a href="#" class="btn-top">위로</a>
+<style>
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background: rgb(254, 255, 190);
+}
+.area1, .area3 { 
+  height: 500px; 
+  background: lightpink; 
+}
+.area2 { 
+  position: relative; 
+  padding: 50px 0;
+  background: lightblue; 
+}
+.circle-g {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.circle1 {
+  background-color: rgba(255,0,255,.5);
+}
+.circle2 {
+  margin-top: -100px;
+  background-color: rgba(0,0,255,.5);
+}
+.btn-top {
+    position: fixed;
+    bottom: 30px;
+    /* right: -100px;
+    opacity : 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: #210f53;
+    color: #fff;
+    border-radius: 10px;
+    transition : all 1s;
+}
+</style>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const hd = document.querySelector("#header");
+    const btnRightHidden = -250
+    gsap.set(".btn-top", {
+        btnRightHidden : -250,
+        opacity : 0,    
+        })
+
+    window.addEventListener("scroll", _.throttle(hdScroll, 300)); 
+
+function hdScroll(){
+    // 만약 80px이상 스크롤이 되면 
+    // header를 숨기고
+    // 만약 80px 이하 스크롤이 되면
+    // header를 보이게 하기
+    if(window.scrollY > 80) {
+        // gsap 사용해서
+        // opacity : 0
+        // display : none
+        gsap.to(hd,{
+            opacity : 0,
+            display : "none",
+        });
+        gsap.set(".btn-top", {
+            right : 50,
+            opacity : 1,    
+        })
+        // gsap.to(".btn-top", {
+        //     right: 50,
+        //     opacity : 1,
+        //     // duration : 0.5
+        // });
+        // gsap.fromTo(".btn-top", {
+        //     opacity: 0,
+        //     display: "none",
+        // }, {
+        //     opacity: 1,
+        //     display: "flex",
+        //     duration: 1.5,
+        // });
+    } else {
+        gsap.to(hd,{
+            opacity : 1,
+            display : "flex",
+            duration : 0.5,
+        });
+        gsap.set(".btn-top", {
+            btnRightHidden : -250,
+            opacity : 0,    
+        })
+        // gsap.to(".btn-top", {
+        //     right: null,
+        //     opacity : 0,
+        //     duration : 0.5
+        // });
+        // gsap.fromTo(".btn-top", {
+        //     opacity: 1,
+        //     display: "flex",
+        // }, {
+        //     opacity: 0,
+        //     display: "none",
+        //     duration: 1.5,
+        // });
+    }
+}
+
+    gsap.to(".circle1", {
+        scrollTrigger: {
+            trigger: ".area2", //인터랙션이 어느 지점에서 시작되는지
+            markers: true, //인터랙션의 시작과 끝에 마커를 표시
+            start : "top 50%", //인터랙션이 시작되는 지점(trigger의 상대 위치, viewport의 절대 위치)
+            end: "+=250", //인터랙션이 끝나는 지점
+            scrub:     true, //스크롤의 양방향으로 인터랙션을 재생
+            
+        },
+        x: 300,
+        duration: 1,
+    })    
+    gsap.to(".circle2", {
+        scrollTrigger: {
+            trigger: ".area2", //인터랙션이 어느 지점에서 시작되는지
+            markers: true, //인터랙션의 시작과 끝에 마커를 표시
+            start : "top 50%", //인터랙션이 시작되는 지점(trigger의 상대 위치, viewport의 절대 위치)
+            end: "+=250", //인터랙션이 끝나는 지점
+            scrub:     true, //스크롤의 양방향으로 인터랙션을 재생
+            
+        },
+        y: 300,
+        scale: 15,
+        duration: 2,
+    })    
+</script>
+</body>
+</html>
