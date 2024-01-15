@@ -20,7 +20,7 @@
 	</div>
 </div>
 <div class="area3"></div>
-<a href="#" class="btn-top">위로</a>
+<a href="javascript:void()" class="btn-top">위로</a>
 <style>
 #header {
     position: fixed;
@@ -77,8 +77,9 @@
     gsap.registerPlugin(ScrollTrigger);
 
     const hd = document.querySelector("#header");
+    const topBtn = document.querySelector(".btn-top");
     const btnRightHidden = -250
-    gsap.set(".btn-top", {
+    gsap.set(topBtn, {
         btnRightHidden : -250,
         opacity : 0,    
         })
@@ -86,6 +87,23 @@
     window.addEventListener("scroll", _.throttle(hdScroll, 300)); 
 
 function hdScroll(){
+
+
+    topBtn.addEventListener("click" , function(event){
+        // 링크 이동 방지
+        // <a href = "javascropt:void()">위로</a>
+        // 둘 중 아무거나 사용해도 됨
+        event.preventDefault();
+        // 화면을 맨 위로 이동
+        gsap.to(window, { 
+            scrollTo: 0, 
+            duration: 1,
+        });
+    });
+
+
+
+
     // 만약 80px이상 스크롤이 되면 
     // header를 숨기고
     // 만약 80px 이하 스크롤이 되면
@@ -98,7 +116,7 @@ function hdScroll(){
             opacity : 0,
             display : "none",
         });
-        gsap.set(".btn-top", {
+        gsap.set(topBtn, {
             right : 50,
             opacity : 1,    
         })
@@ -121,7 +139,7 @@ function hdScroll(){
             display : "flex",
             duration : 0.5,
         });
-        gsap.set(".btn-top", {
+        gsap.set(topBtn, {
             btnRightHidden : -250,
             opacity : 0,    
         })
@@ -147,7 +165,7 @@ function hdScroll(){
             markers: true, //인터랙션의 시작과 끝에 마커를 표시
             start : "top 50%", //인터랙션이 시작되는 지점(trigger의 상대 위치, viewport의 절대 위치)
             end: "+=250", //인터랙션이 끝나는 지점
-            scrub:     true, //스크롤의 양방향으로 인터랙션을 재생
+            scrub:  true, //스크롤의 양방향으로 인터랙션을 재생
             
         },
         x: 300,
