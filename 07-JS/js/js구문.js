@@ -241,3 +241,49 @@ for(let user of users){
     console.log(user);
     console.log(user.name);
 }
+
+// for in문
+// for (변수 in 객체) {실행될 코드}
+const user = {
+    name: "겨울",
+    age: 2,
+}
+
+// 점 표기법
+console.log();
+// 대괄호 표기법
+console.log(user["name"], user["age"]);
+
+ for(let key in user){
+    console.log(key);
+    console.log(user[key]); 
+ }
+
+//  while문
+
+// while(조건){실행될 코드}
+
+// 1부터 10까지 더하기
+
+let i = 1; // 초기값
+let sum = 0; // 합계를 저장할 변수
+
+while(i <= 10){
+    // sum = sum + i;
+    sum += i;
+    // i = i + 1;
+    // i += 1;
+    i++;
+}
+
+console.log(sum);
+
+// do while문
+// do {실행될 코드} while(조건);
+
+let j = 0;
+
+do {
+    console.log(j);
+    j++;
+}while(j < 10);
