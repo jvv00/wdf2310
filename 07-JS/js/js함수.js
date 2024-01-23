@@ -84,9 +84,73 @@ console.log(getEmail(users[2]));
 const animals = ["dog", "cat", "fish"];
 
 // 함수 선언(배열의 세번째 값 출력 함수)
-function getThird([, b, c]){
+function getThird([a, , c = "두번째 요소가 없습니다."]){
     // const[a, b, c] = array;
 
     return `저는 ${c}를 키웁니다.`;
 }
 console.log(getThird(animals));
+
+// 나머지 매개변수(...rest)
+// 매개변수를 배열로 전달받는다.
+// funsction 함수이름(...매개변수){}
+
+function sum(a, b,...rest){
+    return console.log(a, b, rest);
+}
+sum(1,2);
+sum(1,2,3,4,5,6,7,8);
+
+// 배열의 숫자를 더하는 로직 함수
+function sumAll(...rest){
+    console.log(rest);
+    
+    // return rest.reduce(function(){}, 초기값);
+    return rest.reduce(function(account, current){
+        return account + current; 
+    }, 0);
+}
+
+console.log(sumAll(1,2,3,4,5,6,7,8,9,10));
+
+// 화살표 함수
+// const fn = function (){};
+
+() => {}; // 매개변수가 없을 경우
+x => {}; // 매개변수가 하나일 경우 소괄호 생략 가능
+(x, y) => {}; // 매개변수가 두개 이상일 경우 소괄호로 감싸준다.
+
+const hello = (name) => {
+    console.log(`나는 ${name} 입니다.`);
+};
+hello("김지우");
+
+const sum2 = (a, b) => a + b;
+
+console.log(sum2(1,2));
+
+// 화살표 함수의 다양한 예시
+// 1. 매개변수가 없는 경우
+const a = () => {};
+
+// 2. 매개변수가 하나인 경우(괄호 생략 가능)
+const b = x => {};
+
+// 3. 매개변수가 여러 개인 경우(괄호 생략 불가)
+const c = (x, y) => {}; 
+
+// 4. 함수의 return이 있는 경우
+// return 으로 시작하는 경우 중괄호, return 생략 가능
+const d = (x, y) => x + y;
+
+// 5. return으로 시작하지 않는 경우 중괄호 생략 불가
+const e = (x, y) => {
+    console.log(x);
+    return y;
+};
+
+// 6. 객체를 반환하는 경우 객체를 소괄호로 감싸준다.
+const f = () => ({a : 1});
+
+// 7. 배열을 반환하는 경우
+const g = () => [1, 2];
