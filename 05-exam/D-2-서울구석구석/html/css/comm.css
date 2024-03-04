@@ -75,7 +75,6 @@ h1 a img{
 #main {
     display: flex;
     flex-direction: column;
-    background: lightblue;
     flex: 1;
 }
 .main_inner1 {
@@ -84,12 +83,19 @@ h1 a img{
     /* height: 400px; */
 }
 .slide_wrap {
+    position: relative;
     overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 .slide {
     display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 300%;
     height: 100%;
+    transition: all 0.3s;
 }
 .slide li {
     width: 100%;
@@ -103,7 +109,10 @@ h1 a img{
 }
 #aside {
     width: 230px;
-    background: lightpink;
+}
+#aside img {
+    height: 100%;
+    object-fit: cover;
 }
 .main_inner2 {
     display: flex;
@@ -111,37 +120,162 @@ h1 a img{
     height: 250px;
     gap: 30px;
 }
+h2 {
+    font-size: 20px;
+    padding: 3px;
+}
 #tab1 {
-    background: plum;
     width: 50%;
+    padding: 10px;
+}
+#tab1 a{
+ display: flex;
+ flex-direction: row;
+}
+#tab1 span {
+    display: flex;
+    text-overflow: ellipsis;
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#tab1 em {
+    display: flex;
+    justify-content: center;
+    width: 15%;
 }
 #tab2 {
-    background: orange;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
-
-
+.gallery {
+    display: flex;
+    /* justify-content: center; */
+}
+#tab2 ul {
+    /* display: flex; */
+    flex-direction: row;
+    gap: 30px;
+}
+#tab2 li {
+    width: 30%;
+}
+#tab2 a{
+    display: flex;
+    flex-direction: column;
+}
+#tab2 img{
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.tabs {
+     display: flex;
+     position: relative;
+}
+.tabs h2{
+    white-space: nowrap;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.tab-tit {
+    justify-content: center;
+}
+.tabs .active .tab-tit{
+    background: gray;
+    color: white;
+}
+.tabs ul {
+    display: none;
+}
+.tabs .left.active ul {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 15px;
+}
+.tabs .right.active ul {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 15px;
+}
 /* footer */
 #footer {
     display: flex;
     flex-direction: row;
-    background: yellowgreen;
     width: 100%;
     height: 100px;
-    
-}
+    background: #eee; 
+}  
 .logo a {
     display: block;
     width: 200px;
 }
 .logo a img{
     display: block;
-    margin: 10px auto;
-
+    margin: 0 auto;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+#footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:20px 5px ;
 }
 #footer p {
     flex: 1;
 }
 .f-site {
     width: 230px;
+}
+.sites {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* modal */
+#modal {
+    display: none;
+}
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    background: #fff;
+}
+.modal-cont strong {
+    font-size: 18px;
+}
+.modal-cont p {
+    padding: 16px 10px 30px ;
+}
+.modal-cont button {
+    padding: 5px 30px;
+    background: #375c49;
+    color: #fff;    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
