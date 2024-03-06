@@ -154,3 +154,58 @@ const f = () => ({a : 1});
 
 // 7. 배열을 반환하는 경우
 const g = () => [1, 2];
+
+// 호출 스케줄링
+
+// setTimeout
+// setTimeout은 일정 시간이 지난 후에 함수를 실행하는 함수이다.
+// setTimeout(함수, 시간)
+
+const timer = setTimeout(() => {
+    console.log('hello')
+}, 1000)
+
+const btnStop = document.querySelector('#btnStop')
+
+btnStop.addEventListener('click', () => {
+    console.log('stop')
+    clearTimeout(timer)
+})
+
+// setInterval
+// 일정 시간 간겨긍로 함수를 실행하는 함수이다.
+// setInterval(함수, 시간)
+setInterval(() => {
+    console.log('hello, hello!')
+}, 3000)
+
+const slideStop = document.querySelector('#slideStop')
+
+
+document.querySelector('#slideStop').addEventListener('click', () => {
+    console.log('슬라이드 정지')
+    clearInterval(timer2)
+})
+
+// 콜백 함수
+// 함수의 매개변수로 전달되는 함수를 콜백 함수라고 한다.
+const x= (props) => {
+    props()
+    console.log('X')
+}
+const y = () => {
+    console.log('Y')
+}
+x(y)
+
+// setTimeout 콜백 함수
+const sum3 = (a, b, c) => {
+    // setTimeout(함수, 시간)
+    setTimeout(() => {}, 1000)  
+    return c(a + b)
+}
+
+sum3(1, 2, (value) => {
+    console.log('hello_sum3')
+    console.log(value)
+})
