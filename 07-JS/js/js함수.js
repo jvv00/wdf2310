@@ -161,9 +161,9 @@ const g = () => [1, 2];
 // setTimeout은 일정 시간이 지난 후에 함수를 실행하는 함수이다.
 // setTimeout(함수, 시간)
 
-const timer = setTimeout(() => {
-    console.log('hello')
-}, 1000)
+// const timer = setTimeout(() => {
+//     console.log('hello')
+// }, 1000)
 
 const btnStop = document.querySelector('#btnStop')
 
@@ -172,12 +172,12 @@ btnStop.addEventListener('click', () => {
     clearTimeout(timer)
 })
 
-// setInterval
+// setInterval   
 // 일정 시간 간겨긍로 함수를 실행하는 함수이다.
 // setInterval(함수, 시간)
-setInterval(() => {
-    console.log('hello, hello!')
-}, 3000)
+// setInterval(() => {
+//     console.log('hello, hello!')
+// }, 3000)
 
 const slideStop = document.querySelector('#slideStop')
 
@@ -209,3 +209,88 @@ sum3(1, 2, (value) => {
     console.log('hello_sum3')
     console.log(value)
 })
+
+const A = (B) => {
+    B()
+    console.log('A')
+}
+const B = () => {
+    console.log('B')
+}
+
+A(B)
+
+const sum4 = (a, b, c) => {
+    setTimeout(() => {
+        return c(a + b)
+    }, 2000)
+}
+
+sum4(1, 5, (d) => {console.log(d)})
+
+// 재귀 함수
+// 재귀 함수란 함수가 자기 자신을 호출하는 함수이다.
+
+let i = 0
+
+const aaa = () => {
+    console.log('aaa')
+    i++
+    if(i < 5){
+        aaa()
+    }
+}
+
+aaa()
+
+// 최고 조상님 찾기 함수
+const userA = {name: 'A', parent: null}
+const userB = {name: 'B', parent: userA}
+const userC = {name: 'C', parent: userB}
+const userD = {name: 'D', parent: userC}
+
+const getRootUser = (props) => {
+    if (props.parent){
+        return getRootUser(props.parent)
+    }
+}
+console.log(getRootUser(userD))
+
+// this
+// 일반 함수는 호출 위치에 따라서 this가 정해진다.
+// 화살표 함수는 자신이 선언된 함수 범위에서 this가 정해진다.
+
+const obj = {
+    name: '아메리카노',
+    price: 4000,
+    front(){
+        return `${this.name}의 가격은 ${this.price}입니다.`
+    },
+}
+console.log(obj.front())
+
+function coffee2(){
+    this.name = '프라푸치노'
+    this.price = 5000
+
+    return{
+        name: '라떼',
+    price: 4500,
+    front: () => {
+        return `${this.name}의 가격은 ${this.price}입니다.`
+    },
+    }
+}
+
+const coffee = coffee2()
+console.log( coffee.front())
+
+// const obj2 = {
+//     name: '라떼',
+//     price: 4500,
+//     front: () => {
+//         return `${this.name}의 가격은 ${this.price}입니다.`
+//     },
+// }
+// console.log(obj2.front())
+
